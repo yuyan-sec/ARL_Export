@@ -18,13 +18,8 @@ docker exec -it arl /bin/bash -c 'mongo arl --eval "printjson(db.site.find().toA
 docker cp arl:/tmp/output.json output.json
 ```
 
-3、清空全局查看的站点内容
 
-```
-docker exec -it arl /bin/bash -c 'mongo arl --eval "db.site.remove({})"'
-```
-
-4、使用脚本生成 csv
+3、使用脚本生成 csv
 
 ```
 python ARL_Export.py
@@ -32,3 +27,8 @@ python ARL_Export.py
 
 
 
+清空全局查看的站点内容
+
+```
+docker exec -it arl /bin/bash -c 'mongo arl --eval "db.site.remove({})"'
+```
